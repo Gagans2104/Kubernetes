@@ -14,4 +14,12 @@ public class KubeController {
     public String sayBye(){
         return "Bye";
     }
+    @GetMapping("/bangalore")
+    public String goBangalore(){
+        return "Bangalore";
+    }
+    @GetMapping("/chennai")
+    public String goChennai(){
+        return "Chennai";
+    }
 }
