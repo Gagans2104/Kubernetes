@@ -8,3 +8,5 @@ Kubernetes Learning
    ))
 6. Generating the POD - k run kubernetes --image gagan2104/kubernetes:1.0
 7. Expose the application in a server - k expose po kubernetes --name kubernetessvc --port 8081
+
+
