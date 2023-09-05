@@ -25,11 +25,30 @@ Kubernetes Learning
    
    
 4. Kubernetes (To deploy images created from above we need a kubernetes cluster so we can create it using kind or from open shift)
+   ```yaml
+ 
    > kind create cluster --name anyname (To create cluster from kind)
+   
    > oc login --token=sha256~K5pXolaxZix2rW3o2sNq3IXBMj9BThcHDHTH4CKYKLU --server=https://api.sandbox-m3.1530.p1.openshiftapps.com:6443 (To connect to a cluster created in open shift)
+   
    > kubectx clustername (To switch from one cluster to another if there are multiple clusters created locally)
+   
    > kubectl run nameofthepod --image hubreponame/imagename:tagversion
+   
    > k run kubernetes --image gagan2104/kubernetes:1.0 (To create a pod in the cluster)
+   
    > k expose po kubernetes --name kubernetessvc --port 8081 (To access the deployed application we have to create a service)
+   ```
+5. Helm
+  ```yaml
+  > helm list  (To check list of helms available)
+  
+  > helm install kubernetes-gagan helm-templates/ (helm install name directory - To create a package of all yaml files to run at a single time)
+  
+  > helm delete kubernetes-gagan (helm delete name - To delete the application installed from helm
+
+```
+
+ 
 
 
