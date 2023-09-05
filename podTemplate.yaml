@@ -13,7 +13,7 @@ spec:
 #        items:
 #          - key: .dockerconfigjson
 #            path: config.json
-  serviceAccountName: jenkins
+  serviceAccountName: jenkinsx
   securityContext:
     runAsUser: 0
   containers:
@@ -58,10 +58,10 @@ spec:
       resources:
         requests:
           memory: "128Mi"
-          cpu: "1"
-        limits:
-          memory: "500Mi"
           cpu: "2"
+        limits:
+          memory: "1000Mi"
+          cpu: "4"
 #    - name: python
 #      image: python:latest
 #      imagePullPolicy: Always
