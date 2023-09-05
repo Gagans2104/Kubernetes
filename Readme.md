@@ -4,12 +4,25 @@ Kubernetes Learning
 2. Gradle Build ( Generates Jar file of application)
    > gradle clean build
 3. Docker Build 
+   ```yaml
+   
    > docker build -t hubreponame/imagename:tagversion
+   
    > docker build -t gagan2104/kubernetes:1.0 (Pushes the Docker Image from local docker registry to remote docker hub
+    
+   
    > docker images (To see the list of images built locally)
+ 
+
    > docker login (Should authenticate from local to connect to remote docker hub)
+ 
+
    > docker push hubreponame/imagename:tagversion
+ 
+
    > docker push gagan2104/kubernetes:1.0 (Pushes the Docker Image into remote Docker Hub)
+  ```
+   
    
 4. Kubernetes (To deploy images created from above we need a kubernetes cluster so we can create it using kind or from open shift)
    > kind create cluster --name anyname (To create cluster from kind)
