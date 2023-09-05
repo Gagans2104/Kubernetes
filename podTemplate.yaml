@@ -7,12 +7,12 @@ spec:
   volumes:
     - name: sharedvolume
       emptyDir: {}
-    - name: kaniko-secret
-      secret:
-        secretName: dockercred
-        items:
-          - key: .dockerconfigjson
-            path: config.json
+#    - name: kaniko-secret
+#      secret:
+#        secretName: dockercred
+#        items:
+#          - key: .dockerconfigjson
+#            path: config.json
   serviceAccountName: jenkins
   securityContext:
     runAsUser: 0
