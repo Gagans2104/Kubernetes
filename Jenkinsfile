@@ -33,29 +33,29 @@ pipeline {
                 }
             }
         }
-        stage('Build Image') {
-            steps {
-                script {
-                    container('kaniko') {
-                        sh '''
-              /kaniko/executor --context `pwd` --destination ${IMAGE_REPO}/${NAME}:${VERSION}
-            '''
-                    }
-                }
-            }
-        }
-        stage('helm install') {
-          steps {
-            script{
-                container('helm'){
-                  sh "helm list"
-//                   sh "helm lint ./${HELM_CHART_DIRECTORY}"
-                  sh "helm upgrade --set image.tag=${VERSION} ${NAME} ./${HELM_CHART_DIRECTORY} -n ${NAMESPACE} --install"
-                  sh "helm list"
-                }
-                 }
-            }
-          }
+//         stage('Build Image') {
+//             steps {
+//                 script {
+//                     container('kaniko') {
+//                         sh '''
+//               /kaniko/executor --context `pwd` --destination ${IMAGE_REPO}/${NAME}:${VERSION}
+//             '''
+//                     }
+//                 }
+//             }
+//         }
+//         stage('helm install') {
+//           steps {
+//             script{
+//                 container('helm'){
+//                   sh "helm list"
+// //                   sh "helm lint ./${HELM_CHART_DIRECTORY}"
+//                   sh "helm upgrade --set image.tag=${VERSION} ${NAME} ./${HELM_CHART_DIRECTORY} -n ${NAMESPACE} --install"
+//                   sh "helm list"
+//                 }
+//                  }
+//             }
+//           }
         // stage('Clone/Pull Repo') {
         //     steps {
         //         script {
